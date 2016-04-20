@@ -2,7 +2,7 @@
 
 <?php
 
-	$artistAlbum = array("jon"=>"genster","adel"=>"loser");
+	$artistAlbum = array("Stephan"=>"Masters","daniel"=>"rossie","justin"=>"bieber");
 	
 	echo "<table>";
 		foreach ($artistAlbum as $artist => $album) {

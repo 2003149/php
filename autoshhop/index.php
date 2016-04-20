@@ -77,31 +77,31 @@
 </head>
 <body>
     <form method="post">
-        <input type="text" name="minprijs" placeholder="Minimum Prijs">
-        <input type="text" name="maxprijs" placeholder="Maximum Prijs">
+        <input type="number" min="1" max="0" 		name="minprijs" placeholder="Minimum Prijs" >
+        <input type="number" min="1" max="1000000"	name="maxprijs" placeholder="Maximum Prijs">
         <select name="merk">
             <option value="alle">Alle merken</option>
-            <?php
-                $merken = array();
-                foreach ($lijst as $auto) {
-                    if (!in_array($auto->getMerk(), $merken)) {
-                        array_push($merken, $auto->getMerk());
-                    }
-                }
-                foreach ($merken as $merk) {
-                    echo "<option value=".$merk.">".$merk."</option>";
-                }
-            ?>
+			<option value="Ford">Ford</option>			
+			<option value="Opel">Opel</option>
+			<option value="Sabaru">Sabaru</option>
+			<option value="Mercedes">Mercedes</option>
+			<option value="Ferrari">Ferrari</option>
+			<option value="Lotus">Lotus</option>
+			<option value="Citroen">Citroen</option>
+			<option value="Volvo">Volvo</option>
+			<option value="Mini">Mini</option>
         </select>
+		
         <input type="submit" name="submit" value="Ok">
     </form>
 
     <?php
         foreach ($lijst as $auto) {
             if (!isset($_POST["submit"]) || 
-                (isset($_POST["submit"]) && ($auto->getPrijs() >= $_POST["minprijs"] || 
-                $_POST["minprijs"] == "") && ($auto->getPrijs() <= $_POST["maxprijs"] || 
-                $_POST["maxprijs"] == "") && ($auto->getMerk() == $_POST["merk"] || $_POST["merk"] == "alle"))
+                (isset($_POST["submit"]) &&
+				 ($auto->getPrijs() >= $_POST["minprijs"] || $_POST["minprijs"] == "") &&
+				 ($auto->getPrijs() <= $_POST["maxprijs"] || $_POST["maxprijs"] == "") &&
+				 ($auto->getMerk() == $_POST["merk"] || $_POST["merk"] == "alle"))
             ) {
                 echo "<div class='autokader'>";
                     echo "<p class='merktype'>";

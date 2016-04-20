@@ -22,7 +22,9 @@
 					<li><a href="/index.php"class="sliding-middle-out">Home</a></li>
 					<li><a href="/phpopdrachten.php" class="sliding-middle-out">php opdrachten</a>	</li>
 					<li><a href="/jspopdrachten.php"class="sliding-middle-out">jsp</a></li>
+					<li><a href="/database.php"class="sliding-middle-out">jquery</a></li>
 					<li><a href="/database.php"class="sliding-middle-out">database</a></li>
+					<li><a href="/database.php"class="sliding-middle-out">own creations</a></li>
 
 				</ul>
 			</div><!--/.nav-collapse -->
